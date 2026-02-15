@@ -1,0 +1,20 @@
+{
+    "model_name": "heart_disease_xgboost",
+    "version": "multihospital_threshold_v1",
+    "train_hospital": [
+        "cleveland",
+        "hungarian"
+    ],
+    "validation_hospital": "va",
+    "test_hospitals": "switzerland",
+    "cv_mean_auc": 0.8885295446146266,
+    "validation_auc": 0.7049611791025135,
+    "test_auc": 0.7684782608695652,
+    "best_threshold": 0.09547738693467336,
+    "calibration": "sigmoid",
+    "imputation": {
+        "numeric": "median",
+        "categorical": "most_frequent"
+    },
+    "created_at": "2026-02-13T05:50:05.866598"
+}
