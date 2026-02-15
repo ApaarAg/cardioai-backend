@@ -57,3 +57,9 @@ def lime_plot(data: PatientData):
 def shap_force(data: PatientData):
     html = generate_shap_force_html(data.dict())
     return HTMLResponse(content=html)
+
+@app.get("/")
+def root():
+    return {"message": "CardioAI Backend is running"}
+
+
