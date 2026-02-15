@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import os
 import matplotlib
 matplotlib.use("Agg")
 
@@ -10,7 +11,9 @@ import joblib
 from app.services.model_loader import xgb_model
 
 # Load training distribution saved earlier
-TRAINING_DATA = joblib.load(r"app\services\training_distribution.pkl")
+BASE_DIR = os.path.dirname(__file__)
+TRAINING_DATA = joblib.load(os.path.join(BASE_DIR, "training_distribution.pkl"))
+
 
 FEATURE_NAMES = TRAINING_DATA.columns.tolist()
 
@@ -45,3 +48,4 @@ def generate_lime(data: dict):
     plt.close(fig)
 
     return buffer.getvalue()
+
